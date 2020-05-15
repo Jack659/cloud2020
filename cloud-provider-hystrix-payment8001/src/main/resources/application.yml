@@ -10,6 +10,9 @@ eureka:
       defaultZone: http://eureka7001.com:7001/eureka/
 #  server:
 #    enable-self-preservation: false
+  instance:
+    instance-id: provider-hystrix-payment
+    prefer-ip-address: true
 
 spring:
   application:
