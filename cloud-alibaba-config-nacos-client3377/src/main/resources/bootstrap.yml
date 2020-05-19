@@ -11,4 +11,7 @@ spring:
       config:
         server-addr: localhost:8848 #配置中心地址
         file-extension: yml #指定yaml格式的配置
+#        prefix: nacos-config  #Nacos配置管理dataId格式规定${prefix}配置的值，默认${spring.application.name}
 
+# ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
+# nacos-config-client-dev.yml
