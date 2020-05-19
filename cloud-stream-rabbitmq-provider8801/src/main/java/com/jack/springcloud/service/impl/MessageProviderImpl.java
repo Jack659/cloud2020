@@ -25,7 +25,8 @@ public class MessageProviderImpl implements IMessageProvider {
     public String send() {
         String serial = IdUtil.simpleUUID();
         output.send(MessageBuilder.withPayload(serial).build());
-        log.info("****serial:{}", serial);
+//        log.info("****serial:{}", serial);
+        System.out.println("消息发送 serial:" + serial);
         return null;
     }
 
