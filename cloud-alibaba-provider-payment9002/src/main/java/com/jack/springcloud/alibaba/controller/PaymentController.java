@@ -1,27 +1,23 @@
-package com.jack.springcloud.controller;
+package com.jack.springcloud.alibaba.controller;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.UUID;
 
 /**
  * @Author: Jack
- * @Date: 2020/5/11 11:39
+ * @Date: 2020/5/19 15:42
  */
 @RestController
-@Slf4j
 public class PaymentController {
 
     @Value("${server.port}")
     private String serverPort;
 
-    @GetMapping(value = "/payment/zk")
-    public String paymentzk() {
-        return "springcloud with zookeeper:" + serverPort + "\t" + UUID.randomUUID().toString();
+    @GetMapping(value = "/payment/nacos/{id}")
+    public String getPayment(@PathVariable("id") Integer id) {
+        return "nacos registry, serverPort: " + serverPort + "\t id" + id;
     }
-
 
 }
